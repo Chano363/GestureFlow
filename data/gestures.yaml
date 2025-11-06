@@ -1,0 +1,117 @@
+# HaGRIDv2 specific parameters
+hagrid_params:
+  # Gesture stability check
+  stability_frames: 5
+  stability_threshold: 0.8
+  
+  # Gesture transition parameters
+  transition_frames: 3
+  
+  # Gesture duration parameters
+  min_gesture_duration: 0.5  # seconds
+  max_gesture_duration: 5.0  # seconds
+
+# Gesture action mapping
+gesture_actions:
+  # Presentation control
+  presentation:
+    next_slide:
+      gestures: ["two_up"]
+      description: "V gesture to switch to next slide"
+      
+    previous_slide:
+      gestures: ["two_up_inverted"]
+      description: "Inverted V gesture to switch to previous slide"
+      
+    zoom_in:
+      gestures: ["like"]
+      description: "Like gesture to zoom in slide"
+      
+    zoom_out:
+      gestures: ["dislike"]
+      description: "Dislike gesture to zoom out slide"
+      
+    start_slideshow:
+      gestures: ["xsign"]
+      description: "X sign gesture to start slideshow"
+      
+    end_slideshow:
+      gestures: ["stop"]
+      description: "Stop gesture to end slideshow"
+      
+  # Annotation control
+  annotation:
+    start_drawing:
+      gestures: ["one"]
+      description: "One finger gesture to start annotation"
+      
+    end_drawing:
+      gestures: ["palm"]
+      description: "Palm gesture to end annotation"
+      
+    undo:
+      gestures: ["peace"]
+      description: "Peace gesture to undo last annotation"
+      
+    clear_all:
+      gestures: ["stop"]
+      description: "Stop gesture to clear all annotations"
+      
+  # System control
+  system:
+    pause:
+      gestures: ["mute"]
+      description: "Mute gesture to pause system"
+      
+    resume:
+      gestures: ["call"]
+      description: "Call gesture to resume system"
+      
+    exit:
+      gestures: ["rock"]
+      description: "Rock gesture to exit system"
+
+# Gesture sequence patterns
+gesture_sequences:
+  # Double click pattern
+  double_click:
+    pattern: ["click", "none", "click"]
+    time_window: 1.0  # Time window (seconds)
+    description: "Quick consecutive click twice"
+    
+  # Triple click pattern
+  triple_click:
+    pattern: ["click", "none", "click", "none", "click"]
+    time_window: 1.5  # Time window (seconds)
+    description: "Quick consecutive click three times"
+    
+  # Long press pattern
+  long_press:
+    pattern: ["grab"]
+    min_duration: 2.0  # Minimum duration (seconds)
+    description: "Long press"
+    
+  # Swipe patterns
+  swipe_left:
+    pattern: ["point"]
+    direction: "left"
+    min_distance: 50  # Minimum swipe distance (pixels)
+    description: "Swipe left"
+    
+  swipe_right:
+    pattern: ["point"]
+    direction: "right"
+    min_distance: 50  # Minimum swipe distance (pixels)
+    description: "Swipe right"
+    
+  swipe_up:
+    pattern: ["point"]
+    direction: "up"
+    min_distance: 50  # Minimum swipe distance (pixels)
+    description: "Swipe up"
+    
+  swipe_down:
+    pattern: ["point"]
+    direction: "down"
+    min_distance: 50  # Minimum swipe distance (pixels)
+    description: "Swipe down"
